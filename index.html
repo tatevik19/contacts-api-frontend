@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Contacts</h1>
+
+      <section class="card" id="authCard">
+        <h2>Account</h2>
+
+        <div class="tabs">
+            <button type="button" id="tabLogin" class="tab active">Login</button>
+            <button type="button" id="tabRegister" class="tab">Register</button>
+        </div>
+
+        <form id="loginForm" class="form">
+          <label>Email</label>
+          <input type="email" id="loginEmail" required />
+          <label>Password</label>
+          <input type="password" id="loginPassword" required />
+          <button type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" class="form hidden">
+          <label>Email</label>
+          <input type="email" id="registerEmail" required />
+          <label>Password</label>
+          <input type="password" id="registerPassword" required />
+          <button type="submit">Create account</button>
+        </form>
+
+        <p class="hint" id="authMsg"></p>
+      </section>
+
+      <section class="card hidden" id="appCard">
+        <div class="row">
+          <h2>Your contacts</h2>
+          <button id="logoutBtn" class="secondary">Logout</button>
+        </div>
+
+        <form id="contactForm" class="form grid">
+          <div>
+            <label>Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input type="text" id="phone" />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" id="email" />
+          </div>
+          <div class="actions">
+            <button type="submit" id="saveBtn">Add contact</button>
+            <button type="button" id="cancelEditBtn" class="secondary hidden">
+              Cancel edit
+            </button>
+          </div>
+        </form>
+
+        <div id="list" class="list"></div>
+        <p class="hint" id="appMsg"></p>
+      </section>
+    </main>
+  <div id="confirmModal" class="modal hidden">
+  <div class="modal-card">
+    <h3 id="confirmTitle">Delete contact</h3>
+    <p id="confirmText">Are you sure you want to delete this contact?</p>
+
+    <div class="modal-actions">
+      <button id="confirmCancel" class="secondary">Cancel</button>
+      <button id="confirmOk" class="danger">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
